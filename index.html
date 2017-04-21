@@ -42,8 +42,14 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">DZ</a>
+                <nav class="navbar navbar-light bg-faded">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/logo.png" width="35" height="35">
+                    </a>
+                </nav>
+                <a class="navbar-brand" href="index.html"></a>
             </div>
+
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -55,10 +61,45 @@
                         <a href="lightbox.html">Gallery</a>
                     </li>
                     <li>
-                        <a href="Services.html">Services</a>
+                        <div class="dropdown" >
+                        <button class="dropdown-toggle trans-button" style="background-color: transparent; border:none; padding-top:14px;" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="true">
+                            <a href="Services.html">Services</a>
+                        </button>
+                        <ul class="dropdown-menu trans-button" >
+                            <li><a href="Services%20-%20photovideo.html">Videos and Photos</a></li>
+                            <li><a href="Services-%20Cars.html">Cars and Motorcycle Painting</a></li>
+                            <li><a href="Services%20-%20Peintures.html">Paintings</a></li>
+                            <li><a href="Services-Graffiti.html">Graffiti Designing</a></li>
+                            <li><a href="Services%20-%20Archi.html">Architecture</a></li>
+                        </ul>
+                    </div>
                     </li>
                     <li>
-                        <a href="shop.html">Shop</a>
+                        <div class="dropdown" >
+                            <button class="dropdown-toggle trans-button" style="background-color: transparent; border:none; padding-top:14px;" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="true">
+                                <a href="shop.html">Shop</a>
+                            </button>
+                            <ul class="dropdown-menu trans-button" >
+                                <li>Man</li>
+                                <ul>
+                                    <li><a href="Shop-Mtshirts.html">T-shirts </a></li>
+                                    <li><a href="Shop-Msweatshirts.html">Sweatshirts </a></li>
+                                </ul>
+                                <li>Woman</li>
+                                <ul>
+                                    <li><a href="Shop-Wtshirts.html"> T-shirts</a></li>
+                                    <li><a href="Shop-Wsweatshirts.html"> Sweatshirts</a></li>
+                                </ul>
+                                <li>Merchandise</li>
+                                <ul>
+                                    <li><a href="Merchandise-Hats.html"> Hats</a></li>
+                                    <li><a href="Merchandise%20-%20Glasses.html"> Glasses</a></li>
+                                    <li><a href="Merchandise-Lighters.html"> Lighters</a></li>
+                                </ul>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <a href="about.html">About</a>
@@ -93,7 +134,21 @@
     </header>
 
     <!-- Main Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p><h1>Prepare yourself.</h1></br></p>
+                    <video width="760" height="400" controls>
+                        <source src="/img/THIS%20IS%20DOPEZOO.mp4" type="video/mp4">
+                        <source src="img/THIS%20IS%20DOPEZOO.mp4" type="video/ogg">
+                    </video>
 
+                    <p><h1>Do you know BULGARIA?</h1></br></p>
+                    <video width="760" height="400" controls>
+                        <source src="/img/THIS%20IS%20BULGARIA!.mp4" type="video/mp4">
+                        <source src="img/THIS%20IS%20BULGARIA!.mp4" type="video/ogg">
+                    </video>
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">

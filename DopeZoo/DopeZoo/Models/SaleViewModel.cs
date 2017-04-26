@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DopeZoo.Models
 {
-    public class ArticleViewModel
+    public class SaleViewModel
     {
         public int Id { get; set; }
 
@@ -15,10 +15,14 @@ namespace DopeZoo.Models
         public string Title { get; set; }
 
         [Required]
+        public string Price { get; set; }
+
+        [Required]
         public string Content { get; set; }
 
         public string ImagePath { get; set; }
 
         public string AuthorId { get; set; }
+
     }
 }

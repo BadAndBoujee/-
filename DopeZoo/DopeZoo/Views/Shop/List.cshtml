@@ -1,4 +1,5 @@
 ﻿@model List<DopeZoo.Models.Sale>
+@using Microsoft.AspNet.Identity;
 
 @{
     ViewBag.Title = "List";
@@ -25,6 +26,7 @@
             <a href='@Url.Action("Create", "Shop")'> Create new sale post</a>
         </li>
     </ul>
+    <br /><br />
 
     <div class="row">
         @foreach (var sale in Model)
@@ -33,7 +35,7 @@
                 <article>
                     <header>
                         <h2>
-                            @Html.ActionLink(@sale.Title, "Details", "Article", new { @id = sale.Id }, null)
+                            @sale.Title
                         </h2>
                         <h3>
                             @sale.Price
@@ -46,10 +48,15 @@
                     {
                         <img src="@sale.ImagePath" alt="Article Image" height="300" />
                     }
+                    <small>
+                        @sale.Author.FullName
+                    </small>
                     <footer class="pull-right">
-                        <small class="author">
-                            @sale.Author.FullName
-                        </small>
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || sale.IsAuthor(User.Identity.GetUserId())))
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Shop", new { @id = sale.Id }, new { @class = "btn btn-success btn-xs" })
+                            @Html.ActionLink("Delete", "Delete", "Shop", new { @id = sale.Id }, new { @class = "btn btn-danger btn-xs" })
+                        }
                     </footer>
                 </article>
             </div>

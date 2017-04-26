@@ -4,32 +4,57 @@
     ViewBag.Title = "List";
 }
 
+<header class="intro-header" style="background-image: url(@Url.Content("~/Content/img/shop.jpg"))">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Become a part of the zoo.</h1>
+                    <h2 class="subheading"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <div class="container">
+
+
+    <ul class="pager">
+        <li>
+            <a href='@Url.Action("Create", "Shop")'> Create new sale post</a>
+        </li>
+    </ul>
+
     <div class="row">
-        @foreach (var article in Model)
+        @foreach (var sale in Model)
         {
             <div class="col-sm-6">
                 <article>
                     <header>
                         <h2>
-                            //@Html.ActionLink(@article.Title, "Details", "Article", new { @id = article.Id }, null)
+                            @Html.ActionLink(@sale.Title, "Details", "Article", new { @id = sale.Id }, null)
                         </h2>
+                        <h3>
+                            @sale.Price
+                        </h3>
                     </header>
                     <p>
-                        @article.Content
+                        @sale.Content
                     </p>
-                    @if (!string.IsNullOrEmpty(article.ImagePath))
+                    @if (!string.IsNullOrEmpty(sale.ImagePath))
                     {
-                        <img src="@article.ImagePath" alt="Article Image" height="300" />
+                        <img src="@sale.ImagePath" alt="Article Image" height="300" />
                     }
                     <footer class="pull-right">
                         <small class="author">
-                            --author @article.Author.FullName
+                            @sale.Author.FullName
                         </small>
                     </footer>
                 </article>
             </div>
         }
     </div>
+
 </div>
 <hr />

@@ -16,6 +16,9 @@ namespace DopeZoo.Models
         public string Title { get; set; }
 
         [Required]
+        public string Price { get; set; }
+
+        [Required]
         public string Content { get; set; }
 
         public string ImagePath { get; set; }

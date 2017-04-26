@@ -1,5 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using DopeZoo.Migrations;
+using DopeZoo.Models;
+using Microsoft.Owin;
 using Owin;
+using System.Data.Entity;
 
 [assembly: OwinStartupAttribute(typeof(DopeZoo.Startup))]
 namespace DopeZoo
@@ -8,6 +11,8 @@ namespace DopeZoo
     {
         public void Configuration(IAppBuilder app)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ShopDbContext, Configuration>());
+
             ConfigureAuth(app);
         }
     }

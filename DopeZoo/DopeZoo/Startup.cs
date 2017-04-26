@@ -5,6 +5,7 @@ using Owin;
 using System.Data.Entity;
 
 [assembly: OwinStartupAttribute(typeof(DopeZoo.Startup))]
+
 namespace DopeZoo
 {
     public partial class Startup

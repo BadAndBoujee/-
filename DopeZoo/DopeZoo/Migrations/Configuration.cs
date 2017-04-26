@@ -12,10 +12,10 @@ namespace DopeZoo.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            //ContextKey = "DopeZoo.Models.ShopDbContext";
+            ContextKey = "DopeZoo.Models.ShopDbContext";
         }
 
-        protected override void Seed(DopeZoo.Models.ShopDbContext context)
+        protected override void Seed(ShopDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

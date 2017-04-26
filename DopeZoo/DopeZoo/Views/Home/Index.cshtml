@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+<header class="intro-header" style="background-image: url(@Url.Content("~/Content/img/BG-Home.jpg"))">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>DopeZoo</h1>
+                    <hr class="small">
+                    <span class="subheading">Ready to enter the zoo?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><h1>Prepare yourself.</h1></br></p>
+                <video width="760" height="400" controls>
+                    <source src="@Url.Content("~/Content/img/ThisIsDZ.mp4")" type="video/mp4">
+                </video>
+
+                <p><h1>Do you know BULGARIA?</h1></br></p>
+                <video width="760" height="400" controls>
+                    <source src="@Url.Content("~/Content/img/ThisIsBG.mp4")" type="video/mp4">
+                </video>
+                <!-- Pager -->
+                </br>
+                </br>
+
+                <ul class="pager">
+                    <li class="next">
+                        <a href='@Url.Action("List", "Shop")'> Sale Posts &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</article>

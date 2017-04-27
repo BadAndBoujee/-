@@ -32,7 +32,7 @@ namespace DopeZoo.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult Create(Sale model)
+        public ActionResult Create(Sale model, HttpPostedFileBase image)
         {
             if (ModelState.IsValid)
             {
@@ -41,6 +41,28 @@ namespace DopeZoo.Controllers
                     var authorId = this.User.Identity.GetUserId();
 
                     model.AuthorId = authorId;
+
+                    if (image != null)
+                    {
+                        var allowedContentTypes = new[] { "image/jpeg", "image/jpg", "image/png" };
+
+                        if (allowedContentTypes.Contains(image.ContentType))
+                        {
+                            var imagesPath = "/Content/UserImages/";
+
+                            var filename = image.FileName;
+
+                            var uploadPath = imagesPath + filename;
+
+                            var physicalPath = Server.MapPath(uploadPath);
+
+                            image.SaveAs(physicalPath);
+
+                            model.ImagePath = uploadPath;
+
+                        }
+                    }
+
                     db.Sales.Add(model);
                     db.SaveChanges();
                 }
@@ -146,7 +168,7 @@ namespace DopeZoo.Controllers
 
                         if (allowedContentTypes.Contains(image.ContentType))
                         {
-                            var imagesPath = "/Content/img/UserImages/";
+                            var imagesPath = "/Content/UserImages/";
 
                             var fileName = image.FileName;
 

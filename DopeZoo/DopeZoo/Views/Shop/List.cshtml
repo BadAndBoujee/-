@@ -5,6 +5,13 @@
     ViewBag.Title = "List";
 }
 
+<style>
+    .custom {
+        width: 107.75px !important;
+        height: 53px !important;
+    }
+</style>
+
 <header class="intro-header" style="background-image: url(@Url.Content("~/Content/img/shop.jpg"))">
     <div class="container">
         <div class="row">
@@ -40,6 +47,9 @@
                         <h3>
                             @sale.Price
                         </h3>
+                        <h5>
+                            @sale.Author.Email
+                        </h5>
                     </header>
                     <p>
                         @sale.Content
@@ -47,14 +57,12 @@
                     @if (!string.IsNullOrEmpty(sale.ImagePath))
                     {
                         <img src="@sale.ImagePath" alt="Article Image" height="300" />
+                        <br />
                     }
-                    <small>
-                        @sale.Author.FullName
-                    </small>
-                    <footer class="pull-right">
+                    <footer class="pull-right">                     
                         @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || sale.IsAuthor(User.Identity.GetUserId())))
                         {
-                            @Html.ActionLink("Edit", "Edit", "Shop", new { @id = sale.Id }, new { @class = "btn btn-success btn-xs" })
+                            @Html.ActionLink("Edit", "Edit", "Shop", new { @id = sale.Id }, new { @class = "btn btn-success custom" })
                             @Html.ActionLink("Delete", "Delete", "Shop", new { @id = sale.Id }, new { @class = "btn btn-danger btn-xs" })
                         }
                     </footer>
@@ -64,4 +72,3 @@
     </div>
 
 </div>
-<hr />

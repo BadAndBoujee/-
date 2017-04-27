@@ -3,9 +3,22 @@
     ViewBag.Title = "Edit";
 }
 
+<header class="intro-header" style="background-image: url(@Url.Content("~/Content/img/edit.jpg"))">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h2> </h2>
+                    <h1> </h1>
+                    <h2> </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 <div class="container">
     <div class="well">
-        <h2>Edit a Sale post</h2>
         @using (Html.BeginForm("Edit", "Shop", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
         {
             @Html.AntiForgeryToken()

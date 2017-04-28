@@ -1,0 +1,38 @@
+﻿@model List<DopeZoo.Models.Contact>
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "List";
+}
+
+<br /><br /><br />
+
+
+<div class="container">
+
+
+    <div class="row">
+        @foreach (var contact in Model)
+        {
+            <div class="col-sm-12">
+                <article>
+                    <header>
+                        <h2>
+                            @contact.Name
+                        </h2>
+                        <h3>
+                            @contact.Email
+                        </h3>
+                        <h5>
+                            @contact.Phone
+                        </h5>
+                    </header>
+                    <p>
+                        @contact.Message
+                    </p>
+                </article>
+            </div>
+        }
+    </div>
+
+</div>
